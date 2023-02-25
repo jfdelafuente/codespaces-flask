@@ -1,45 +1,110 @@
-body {
+:root {
+    --body-color1: rgb(233, 224, 224);
+    --header-color: rgb(209, 186, 186);
+    --row-color: rgb(209, 186, 186);
+    --button-color: rgb(209, 186, 186);
+    --button-hover-color: rgb(78, 69, 69);
+    --border-color: brown;
+    --border-color-row: brown;
+    --border-button-color: brown;
+  }
+  
+  * {
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-        "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-        sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-        monospace;
-}
-
-.App {
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 62.5%;
+  }
+  
+  body {
+    font-family: "lato";
+    background-color: var(--body-color1);
+  }
+  
+  .container {
+    width: 100%;
+    margin: 0 auto 10px auto;
+    max-width: 600px;
+  }
+  
+  header {
+    background-color: var(--header-color);
+    border-bottom: 2px solid var(--border-color);
+    font-size: 5rem;
     text-align: center;
-}
-
-.App-logo {
-    height: 40vmin;
-    pointer-events: none;
-}
-
-.App-header {
-    background-color: #282c34;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
-}
-
-.App-link {
-    color: #61dafb;
-}
-
-.heart {
-    color: #ff0000;
-}
-
-.small {
-    font-size: 0.75rem;
-}
+    padding-bottom: 10px;
+  }
+  
+  main {
+    padding-top: 5px;
+  }
+  
+  .input-section,
+  .output-section,
+  .button-section {
+    width: 50%;
+    margin: 0 auto 10px auto;
+    max-width: 500px;
+    padding-top: 10px;
+  }
+  
+  .form-row,
+  .survived-row {
+    font-size: 2.2rem;
+    background-color: var(--row-color);
+    width: 100%;
+    border: 1px solid var(--border-color-row);
+    padding: 10px 5px;
+  }
+  
+  .button-row {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+    padding: 5px 5px;
+    width: 100%;
+  }
+  
+  .form-row label,
+  .form-row input,
+  .form-row select {
+    display: inline-block;
+  }
+  
+  .form-row input,
+  .form-row select {
+    width: 45%;
+    text-align: left;
+  }
+  
+  .form-row label,
+  .survived-row label {
+    width: 35%;
+    min-width: 55px;
+    text-align: right;
+    padding-right: 15px;
+  }
+  
+  .survived-row {
+    padding: 5px;
+    text-align: center;
+    font-size: 2.2rem;
+  }
+  
+  .survived-row span {
+    color: var(--border-button-color);
+    font-weight: bold;
+    font-size: 2.3rem;
+  }
+  
+  button {
+    display: block;
+    font-size: 2.2rem;
+    border: 3px solid var(--border-button-color);
+    background: var(--button-color);
+    width: 100%;
+  }
+  
+  button:hover {
+    background: var(--button-hover-color);
+  }
+  

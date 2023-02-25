@@ -1,18 +1,73 @@
 <head>
     <title>{{ title }}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
-
+</head>
 <body>
     <div class="App">
         <header class="App-header">
-            <img src="{{ url_for('static', filename='Octocat.png') }}" class="App-logo" alt="logo" />
-            <p>
-                GitHub Codespaces <span class="heart">♥️</span> Flask
-            </p>
-            <p class="small">
-                Edit <code>templates/index.html</code> and refresh to see your changes!
-            </p>
+
         </header>
+        <main>
+            <form class="titanic-form" method="POST" action="{{ url_for('predict')}}">
+                <section class="input-section">
+                  <div class="form-row">
+                    <label for="pclass">Ticket Class</label>
+                    <select id="pclass" name="pclass">
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                    </select>
+                  </div>
+                  <div class="form-row">
+                    <label for="sex">Sex</label>
+                    <select id="sex" name="sex">
+                      <option value="1">Female</option>
+                      <option value="2">Male</option>
+                    </select>
+                  </div>
+        
+                  <div class="form-row">
+                    <label for="age">Age</label>
+                    <input id="age" name="age" type="number" min="15" max="99" />
+                  </div>
+        
+                  <div class="form-row">
+                    <label for="sibsp"># of Siblings/Spouces</label>
+                    <input id="sibsp" name="sibsp" type="number" />
+                  </div>
+        
+                  <div class="form-row">
+                    <label for="parch"># of Parents/children</label>
+                    <input id="parch" name="parch" type="number" />
+                  </div>
+        
+                  <div class="form-row">
+                    <label for="fare">Fare</label>
+                    <input id="fare" name="fare" />
+                  </div>
+        
+                  <div class="form-row">
+                    <label for="embarked">Embarked</label>
+                    <select id="embarked" name="embarked">
+                      <option value="1">S</option>
+                      <option value="2">C</option>
+                      <option value="3">Q</option>
+                    </select>
+                  </div>
+                </section>
+                <section class="output-section">
+                  <div class="survived-row">
+                    <label for="survived">Survived : </label>
+                    <span id="survived"></span>
+                  </div>
+                </section>
+                <section class="button-section">
+                  <div class="button-row">
+                    <button id="submit">PREDICT</button>
+                  </div>
+                </section>
+              </form>
+        </main>
     </div>
 </body>
 
