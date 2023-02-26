@@ -1,8 +1,9 @@
 :root {
-    --body-color1: rgb(233, 224, 224);
-    --header-color: rgb(209, 186, 186);
-    --row-color: rgb(209, 186, 186);
-    --button-color: rgb(209, 186, 186);
+    --body-color1: #ffffff;
+    --header-color: #1FA725;
+    --clr-footer: #1FA725;
+    --row-color: r#B8E2B4;
+    --button-color: #1FA725;
     --button-hover-color: rgb(78, 69, 69);
     --border-color: brown;
     --border-color-row: brown;
@@ -107,4 +108,19 @@
   button:hover {
     background: var(--button-hover-color);
   }
-  
+
+  footer {
+    height: 100px;
+    width: 100%;
+    background-color: var(--clr-footer);
+    text-align: center;
+    bottom: 0;
+    position: relative;
+}
+footer > p {
+    font-weight: 600;
+    font-size: 20px;
+    color: #FFFFFF;
+    padding-top: 0.7em;
+    letter-spacing: 0.04em;
+}

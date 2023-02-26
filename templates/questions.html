@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <!-- Make it compatible to mobile devices -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Titanic</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static',filename='css/main.css') }}">
+</head>
+
+<body>
+  <header>
+    <h1 id="title">Titanic - Machine Learning from Disaster</h1>
+    <p id="description">
+      <em>Predict survival on the Titanic and get familiar with ML basics</em>
+    </p>
+  </header>
+
+  <main>
+
+    <!-- Action is where the data is sent. In our case, predict page.
+     If action is omitted, it assumed to be the current page -->
+    <form action="{{ url_for('predict')}}" method="post">
+      <section class="input-section">
+        <div class="form-row">
+          <label for="pclass">Ticket Class</label>
+          <select id="pclass" name="pclass">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label for="sex">Sex</label>
+          <select id="sex" name="sex">
+            <option value="1">Female</option>
+            <option value="2">Male</option>
+          </select>
+        </div>
+
+        <div class="form-row">
+          <label for="age">Age</label>
+          <input id="age" name="age" type="number" min="15" max="99" />
+        </div>
+
+        <div class="form-row">
+          <label for="sibsp"># of Siblings/Spouces</label>
+          <input id="sibsp" name="sibsp" type="number" />
+        </div>
+
+        <div class="form-row">
+          <label for="parch"># of Parents/children</label>
+          <input id="parch" name="parch" type="number" />
+        </div>
+
+        <div class="form-row">
+          <label for="fare">Fare</label>
+          <input id="fare" name="fare" />
+        </div>
+
+        <div class="form-row">
+          <label for="embarked">Embarked</label>
+          <select id="embarked" name="embarked">
+            <option value="1">S</option>
+            <option value="2">C</option>
+            <option value="3">Q</option>
+          </select>
+        </div>
+      </section>
+      <section class="output-section">
+        <div class="survived-row">
+          <label for="survived">Survived : </label>
+          <span id="survived"></span>
+        </div>
+      </section>
+      <section class="button-section">
+        <div class="button-row">
+          <button id="submit" type="submit" class="btn-submit" onclick="window.location.href='{{ url_for('predict') }}';">Get
+          PREDICT</button>
+        </div>
+      </section>
+    </form>
+  </main>
+</body>
+<footer>
+  <p>He who has health, has hope; and he who has hope, has everything - Thomas Carlyle</p>
+</footer>
+
+</body>
+
+</html>
